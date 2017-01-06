@@ -10,6 +10,7 @@
 		283EB814E6314D05CBD77E84 /* Pods_PracowniaProblematyczna.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 67DCE55E03588C27DD389E43 /* Pods_PracowniaProblematyczna.framework */; };
 		2A063BCBC8F1F3161FB154FE /* Pods_PracowniaProblematycznaTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5140E2D4EE0DD09127C1B928 /* Pods_PracowniaProblematycznaTests.framework */; };
 		ADBBC1BA1938FAECEDD941C9 /* Pods_PracowniaProblematycznaUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD5E7A78AD593B5CC62C1BBE /* Pods_PracowniaProblematycznaUITests.framework */; };
+		D5477F471DFFE56100E101F3 /* file.txt in Resources */ = {isa = PBXBuildFile; fileRef = D5477F461DFFE56100E101F3 /* file.txt */; };
 		D5F67DA61DD480CE005FCE74 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5F67DA51DD480CE005FCE74 /* AppDelegate.swift */; };
 		D5F67DA81DD480CE005FCE74 /* Akcelerometr.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5F67DA71DD480CE005FCE74 /* Akcelerometr.swift */; };
 		D5F67DAB1DD480CE005FCE74 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D5F67DA91DD480CE005FCE74 /* Main.storyboard */; };
@@ -47,6 +48,7 @@
 		B1428CBFB7ED5C60556759FA /* Pods-PracowniaProblematycznaUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PracowniaProblematycznaUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-PracowniaProblematycznaUITests/Pods-PracowniaProblematycznaUITests.release.xcconfig"; sourceTree = "<group>"; };
 		CD5E7A78AD593B5CC62C1BBE /* Pods_PracowniaProblematycznaUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PracowniaProblematycznaUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D528B7B21DD48407004831B6 /* PracowniaProblematyczna.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PracowniaProblematyczna.entitlements; sourceTree = "<group>"; };
+		D5477F461DFFE56100E101F3 /* file.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = file.txt; sourceTree = "<group>"; };
 		D5F67DA21DD480CE005FCE74 /* PracowniaProblematyczna.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PracowniaProblematyczna.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D5F67DA51DD480CE005FCE74 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D5F67DA71DD480CE005FCE74 /* Akcelerometr.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Akcelerometr.swift; sourceTree = "<group>"; };
@@ -143,6 +145,7 @@
 				D528B7B21DD48407004831B6 /* PracowniaProblematyczna.entitlements */,
 				D5F67DA51DD480CE005FCE74 /* AppDelegate.swift */,
 				D5F67DA71DD480CE005FCE74 /* Akcelerometr.swift */,
+				D5477F461DFFE56100E101F3 /* file.txt */,
 				D5F67DA91DD480CE005FCE74 /* Main.storyboard */,
 				D5F67DAC1DD480CE005FCE74 /* Assets.xcassets */,
 				D5F67DAE1DD480CE005FCE74 /* LaunchScreen.storyboard */,
@@ -296,6 +299,7 @@
 				D5F67DD41DD480FB005FCE74 /* GoogleService-Info.plist in Resources */,
 				D5F67DAD1DD480CE005FCE74 /* Assets.xcassets in Resources */,
 				D5F67DAB1DD480CE005FCE74 /* Main.storyboard in Resources */,
+				D5477F471DFFE56100E101F3 /* file.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -613,6 +617,7 @@
 				CODE_SIGN_ENTITLEMENTS = PracowniaProblematyczna/PracowniaProblematyczna.entitlements;
 				DEVELOPMENT_TEAM = 2PZT698BSA;
 				INFOPLIST_FILE = PracowniaProblematyczna/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = asd.PracowniaProblematyczna;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -628,6 +633,7 @@
 				CODE_SIGN_ENTITLEMENTS = PracowniaProblematyczna/PracowniaProblematyczna.entitlements;
 				DEVELOPMENT_TEAM = 2PZT698BSA;
 				INFOPLIST_FILE = PracowniaProblematyczna/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = asd.PracowniaProblematyczna;
 				PRODUCT_NAME = "$(TARGET_NAME)";
