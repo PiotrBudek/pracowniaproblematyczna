@@ -8,14 +8,7 @@ target 'PracowniaProblematyczna' do
   # Pods for PracowniaProblematyczna
   pod 'Firebase'
   pod 'Firebase/Database'
-  target 'PracowniaProblematycznaTests' do
-    inherit! :search_paths
-    # Pods for testing
-  end
-
-  target 'PracowniaProblematycznaUITests' do
-    inherit! :search_paths
-    # Pods for testing
-  end
-
+  pod 'SwiftCharts', '~> 0.5'
+  pod 'SnapKit'
+  pod 'NVActivityIndicatorView'
 end
