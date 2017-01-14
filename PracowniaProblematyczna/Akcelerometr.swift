@@ -41,6 +41,7 @@ class Akcelerometr: UIViewController, UITextFieldDelegate {
     @IBAction func startStop(_ sender: Any) {
         let deadlineTime = DispatchTime.now() + 14.0
         DispatchQueue.main.asyncAfter(deadline: deadlineTime) { [unowned self] in
+            self.start = false
             self.manager.stopAccelerometerUpdates()
             self.przejdzDoWykresu.isEnabled = true
         }
@@ -55,7 +56,6 @@ class Akcelerometr: UIViewController, UITextFieldDelegate {
             var zt: Float = 0
             // Sprawdzenie dostępności czujnika
             manager.startAccelerometerUpdates()
-            manager.accelerometerUpdateInterval = TimeInterval(NSNumber(value: self.czestotliwosc))
             if manager.isAccelerometerAvailable {
                 var xArray: [[Float]] = [[], []]
                 var yArray: [[Float]] = [[], []]
@@ -69,6 +69,7 @@ class Akcelerometr: UIViewController, UITextFieldDelegate {
                 
                 // Czas odświeżania wartości z czujników
                 // Rozpoczęcie procesu aktualizacji wartości czujników
+                manager.accelerometerUpdateInterval = TimeInterval(NSNumber(value: 1 / self.czestotliwosc))
                 manager.startAccelerometerUpdates()
                 // Utworzenie wątku do obróbki danych z czujników
                 let queue = OperationQueue.current
@@ -80,7 +81,7 @@ class Akcelerometr: UIViewController, UITextFieldDelegate {
                         // Wyświetlenie na ekranie wartości X
                         self.wyswietlanieX.text = "X: \(xAxis)"
                         // Wysłanie na serwer wartości X
-                        xt.add(self.czestotliwosc)
+                        xt += 1 / self.czestotliwosc
                         self.wyswietlanieXt.text = "xt: \(xt)"
                         xArray[0].append(Float(xAxis))
                         xArray[1].append(Float(xt))
@@ -91,7 +92,7 @@ class Akcelerometr: UIViewController, UITextFieldDelegate {
                         // Wyświetlenie na ekranie wartości Y
                         self.wyswietlanieY.text = "Y: \(yAxis)"
                         // Wysłanie na serwer wartości Y
-                        yt += self.czestotliwosc
+                        yt += 1 / self.czestotliwosc
                         self.wyswietlanieYt.text = "yt: \(yt)"
                         yArray[0].append(Float(yAxis))
                         yArray[1].append(Float(yt))
@@ -102,7 +103,7 @@ class Akcelerometr: UIViewController, UITextFieldDelegate {
                         // Wyświetlenie na ekranie wartości Z
                         self.wyswietlanieZ.text = "Z: \(zAxis)"
                         // Wysłanie na serwer wartości Z
-                        zt += self.czestotliwosc
+                        zt += 1 / self.czestotliwosc
                         self.wyswietlanieZt.text = "zt: \(zt)"
                         zArray[0].append(Float(zAxis))
                         zArray[1].append(Float(zt))

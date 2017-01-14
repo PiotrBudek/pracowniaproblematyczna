@@ -16,8 +16,13 @@ class Wykres: UIViewController, NVActivityIndicatorViewable {
     
     @IBOutlet weak var wykresView: UIView!
     
+    @IBOutlet weak var label: UILabel!
+    @IBOutlet weak var labelLeadingConstraint: NSLayoutConstraint!
+    fileprivate var labelLeadingMarginInitialConstant: CGFloat!
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        labelLeadingMarginInitialConstant = labelLeadingConstraint.constant
         updateChart()
     }
     override func viewDidLoad() {
@@ -127,9 +132,7 @@ class Wykres: UIViewController, NVActivityIndicatorViewable {
                 make.right.equalTo(self.wykresView.snp.right)
                 make.height.equalTo(20)
             })
+            self.stopAnimating()
         })
-
-        self.stopAnimating()
     }
-    
 }

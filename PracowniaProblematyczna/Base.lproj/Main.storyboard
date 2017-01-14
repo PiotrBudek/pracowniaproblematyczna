@@ -168,6 +168,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yng-9V-YXG">
+                                <rect key="frame" x="166" y="323" width="0.0" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="aaK-EO-qjT"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="ultraLight" pointSize="15"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Dne-pC-nvl">
                                 <rect key="frame" x="16" y="94" width="343" height="573"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -176,12 +185,16 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="Dne-pC-nvl" firstAttribute="top" secondItem="na0-xd-tHw" secondAttribute="bottom" id="NjL-ZX-INO"/>
+                            <constraint firstItem="Yng-9V-YXG" firstAttribute="top" secondItem="na0-xd-tHw" secondAttribute="bottom" constant="229" id="gmW-P1-Wce"/>
+                            <constraint firstItem="Yng-9V-YXG" firstAttribute="leading" secondItem="Icw-QK-lCY" secondAttribute="leadingMargin" constant="150" id="kRk-Pu-3zV"/>
                             <constraint firstItem="Dne-pC-nvl" firstAttribute="leading" secondItem="Icw-QK-lCY" secondAttribute="leadingMargin" id="qWZ-An-3Qi"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Dne-pC-nvl" secondAttribute="trailing" id="wO1-Ue-iyG"/>
                             <constraint firstItem="ZO6-ba-xlk" firstAttribute="top" secondItem="Dne-pC-nvl" secondAttribute="bottom" id="zSG-3u-2hR"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="label" destination="Yng-9V-YXG" id="qiX-Dc-OBN"/>
+                        <outlet property="labelLeadingConstraint" destination="kRk-Pu-3zV" id="EIZ-oj-kEk"/>
                         <outlet property="wykresView" destination="Dne-pC-nvl" id="igi-2A-fV3"/>
                     </connections>
                 </viewController>
