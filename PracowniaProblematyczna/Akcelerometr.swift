@@ -30,7 +30,7 @@ class Akcelerometr: UIViewController, UITextFieldDelegate {
     // Tworzenie instancji obiektu klasy CMMotionManager w celu umożliwienia korzystania z akcelerometru/żyroskopu
     let manager = CMMotionManager()
     var start: Bool!
-    var czestotliwosc: Double = 0.5
+    var czestotliwosc: Float = 0.5
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -55,6 +55,7 @@ class Akcelerometr: UIViewController, UITextFieldDelegate {
             var zt: Float = 0
             // Sprawdzenie dostępności czujnika
             manager.startAccelerometerUpdates()
+            manager.accelerometerUpdateInterval = TimeInterval(NSNumber(value: self.czestotliwosc))
             if manager.isAccelerometerAvailable {
                 var xArray: [[Float]] = [[], []]
                 var yArray: [[Float]] = [[], []]
@@ -79,7 +80,7 @@ class Akcelerometr: UIViewController, UITextFieldDelegate {
                         // Wyświetlenie na ekranie wartości X
                         self.wyswietlanieX.text = "X: \(xAxis)"
                         // Wysłanie na serwer wartości X
-                        xt += self.czestotliwosc
+                        xt.add(self.czestotliwosc)
                         self.wyswietlanieXt.text = "xt: \(xt)"
                         xArray[0].append(Float(xAxis))
                         xArray[1].append(Float(xt))
@@ -114,7 +115,8 @@ class Akcelerometr: UIViewController, UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         if let text = textField.text {
-            czestotliwosc = Double(text)!
+            czestotliwosc = Float(text)!
+        }
         return true
     }
 }
