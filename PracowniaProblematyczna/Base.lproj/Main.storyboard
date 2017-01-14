@@ -100,11 +100,21 @@
                                     <action selector="startStop:" destination="BYZ-38-t0r" eventType="touchUpInside" id="JE7-9H-P6Q"/>
                                 </connections>
                             </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="R2y-3h-PQB">
+                                <rect key="frame" x="137" y="182" width="90" height="28"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="28" id="fgJ-eI-RR6"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="Yh2-TY-7ek" firstAttribute="top" secondItem="ssa-iy-t02" secondAttribute="bottom" constant="44" id="6sG-fI-QkB"/>
                             <constraint firstAttribute="trailingMargin" secondItem="trH-zv-e8Z" secondAttribute="trailing" id="AfA-ce-R5d"/>
+                            <constraint firstItem="R2y-3h-PQB" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="88" id="GbV-XW-5gD"/>
                             <constraint firstItem="trH-zv-e8Z" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="35" id="HJp-4z-mcG"/>
                             <constraint firstItem="Beg-lX-7xx" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="HLd-FL-taC"/>
                             <constraint firstItem="bzf-jW-MAo" firstAttribute="leading" secondItem="Yh2-TY-7ek" secondAttribute="leading" id="HQE-QC-sXA"/>
@@ -120,9 +130,11 @@
                             <constraint firstItem="trH-zv-e8Z" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="170" id="eVf-dj-aZ8"/>
                             <constraint firstItem="6sh-Gs-dgg" firstAttribute="top" secondItem="trH-zv-e8Z" secondAttribute="bottom" constant="45" id="heD-VP-JaW"/>
                             <constraint firstItem="ssa-iy-t02" firstAttribute="top" secondItem="2Wa-sf-RdD" secondAttribute="bottom" constant="65" id="hkQ-Ya-Vkc"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="R2y-3h-PQB" secondAttribute="trailing" constant="132" id="iHX-Ai-X5i"/>
                             <constraint firstItem="4NV-Gp-y4P" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="77" id="oEd-1h-sM2"/>
                             <constraint firstItem="aRa-lG-mQ2" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="77" id="r0r-Iv-HXs"/>
                             <constraint firstItem="2Wa-sf-RdD" firstAttribute="top" secondItem="6sh-Gs-dgg" secondAttribute="bottom" constant="45" id="rHv-mo-zFB"/>
+                            <constraint firstItem="R2y-3h-PQB" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="121" id="uEq-gf-SWn"/>
                             <constraint firstAttribute="trailingMargin" secondItem="4NV-Gp-y4P" secondAttribute="trailing" constant="30" id="wgM-Qn-bDy"/>
                         </constraints>
                     </view>
@@ -130,6 +142,7 @@
                         <barButtonItem key="backBarButtonItem" title="Powrót" id="laL-Gd-4KJ"/>
                     </navigationItem>
                     <connections>
+                        <outlet property="czestotliwośćTextField" destination="R2y-3h-PQB" id="cuf-WT-Jpi"/>
                         <outlet property="przejdzDoWykresu" destination="4NV-Gp-y4P" id="xEH-ib-Bhe"/>
                         <outlet property="wyswietlanieX" destination="trH-zv-e8Z" id="934-8V-7Gh"/>
                         <outlet property="wyswietlanieXt" destination="ssa-iy-t02" id="kEk-fJ-qPx"/>
@@ -141,7 +154,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="847" y="122"/>
+            <point key="canvasLocation" x="845.60000000000002" y="121.88905547226388"/>
         </scene>
         <!--Wykres-->
         <scene sceneID="7JO-7i-Phx">
@@ -169,7 +182,7 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="wykresView" destination="Dne-pC-nvl" id="jRs-u2-FGe"/>
+                        <outlet property="wykresView" destination="Dne-pC-nvl" id="igi-2A-fV3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pY5-wj-WSi" userLabel="First Responder" sceneMemberID="firstResponder"/>

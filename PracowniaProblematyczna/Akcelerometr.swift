@@ -10,11 +10,11 @@ import UIKit
 import Firebase
 import FirebaseDatabase
 import CoreMotion
-import SwiftCharts
 
-class Akcelerometr: UIViewController {
+class Akcelerometr: UIViewController, UITextFieldDelegate {
     
     // Referencje do obiektów interfejsu użytkownika
+    @IBOutlet weak var czestotliwośćTextField: UITextField!
     @IBOutlet weak var wyswietlanieX: UILabel!
     @IBOutlet weak var wyswietlanieY: UILabel!
     @IBOutlet weak var wyswietlanieZ: UILabel!
@@ -30,9 +30,11 @@ class Akcelerometr: UIViewController {
     // Tworzenie instancji obiektu klasy CMMotionManager w celu umożliwienia korzystania z akcelerometru/żyroskopu
     let manager = CMMotionManager()
     var start: Bool!
+    var czestotliwosc: Double = 0.5
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        czestotliwośćTextField.delegate = self
         start = false
     }
     
@@ -48,15 +50,15 @@ class Akcelerometr: UIViewController {
             manager.stopAccelerometerUpdates()
         } else {
             start = true
-            var xt: Double = 0
-            var yt: Double = 0
-            var zt: Double = 0
+            var xt: Float = 0
+            var yt: Float = 0
+            var zt: Float = 0
             // Sprawdzenie dostępności czujnika
             manager.startAccelerometerUpdates()
             if manager.isAccelerometerAvailable {
-                var xArray: [[Double]] = [[], []]
-                var yArray: [[Double]] = [[], []]
-                var zArray: [[Double]] = [[], []]
+                var xArray: [[Float]] = [[], []]
+                var yArray: [[Float]] = [[], []]
+                var zArray: [[Float]] = [[], []]
                 // Czas początkowy
                 let startTime: Int = {
                     let startDate = Date()
@@ -65,7 +67,6 @@ class Akcelerometr: UIViewController {
                 }()
                 
                 // Czas odświeżania wartości z czujników
-                manager.accelerometerUpdateInterval = 0.5
                 // Rozpoczęcie procesu aktualizacji wartości czujników
                 manager.startAccelerometerUpdates()
                 // Utworzenie wątku do obróbki danych z czujników
@@ -78,12 +79,10 @@ class Akcelerometr: UIViewController {
                         // Wyświetlenie na ekranie wartości X
                         self.wyswietlanieX.text = "X: \(xAxis)"
                         // Wysłanie na serwer wartości X
-                        self.refToDatabase.child("X").setValue(xAxis)
-                        xt += 0.5
+                        xt += self.czestotliwosc
                         self.wyswietlanieXt.text = "xt: \(xt)"
-                        xArray[0].append(xAxis)
-                        xArray[1].append(Double(xt))
-                        self.refToDatabase.child("Xt").setValue(xt)
+                        xArray[0].append(Float(xAxis))
+                        xArray[1].append(Float(xt))
                         self.refToDatabase.child("XArray").setValue(xArray)
                         
                         // Y
@@ -91,25 +90,32 @@ class Akcelerometr: UIViewController {
                         // Wyświetlenie na ekranie wartości Y
                         self.wyswietlanieY.text = "Y: \(yAxis)"
                         // Wysłanie na serwer wartości Y
-                        self.refToDatabase.child("Y").setValue(yAxis)
-                        yt += 0.5
+                        yt += self.czestotliwosc
                         self.wyswietlanieYt.text = "yt: \(yt)"
-                        self.refToDatabase.child("Yt").setValue(yt)
+                        yArray[0].append(Float(yAxis))
+                        yArray[1].append(Float(yt))
+                        self.refToDatabase.child("YArray").setValue(yArray)
                         
                         // Z
                         let zAxis = round(acceleration.z * 10000)/10000
                         // Wyświetlenie na ekranie wartości Z
                         self.wyswietlanieZ.text = "Z: \(zAxis)"
                         // Wysłanie na serwer wartości Z
-                        self.refToDatabase.child("Z").setValue(zAxis)
-                        zt += 0.5
+                        zt += self.czestotliwosc
                         self.wyswietlanieZt.text = "zt: \(zt)"
-                        self.refToDatabase.child("Zt").setValue(zt)
+                        zArray[0].append(Float(zAxis))
+                        zArray[1].append(Float(zt))
+                        self.refToDatabase.child("ZArray").setValue(zArray)
                     }
                 })
             }
         }
     }
-    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        if let text = textField.text {
+            czestotliwosc = Double(text)!
+        return true
+    }
 }
 

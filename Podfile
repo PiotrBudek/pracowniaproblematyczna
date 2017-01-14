@@ -8,7 +8,7 @@ target 'PracowniaProblematyczna' do
   # Pods for PracowniaProblematyczna
   pod 'Firebase'
   pod 'Firebase/Database'
-  pod 'SwiftCharts', '~> 0.5'
+  pod 'SwiftChart'
   pod 'SnapKit'
   pod 'NVActivityIndicatorView'
 end
