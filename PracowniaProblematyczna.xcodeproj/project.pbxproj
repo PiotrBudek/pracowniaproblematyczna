@@ -209,8 +209,7 @@
 				TargetAttributes = {
 					D5F67DA11DD480CE005FCE74 = {
 						CreatedOnToolsVersion = 8.1;
-						DevelopmentTeam = 2PZT698BSA;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 						SystemCapabilities = {
 							com.apple.Keychain = {
 								enabled = 1;
@@ -483,7 +482,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = PracowniaProblematyczna/PracowniaProblematyczna.entitlements;
-				DEVELOPMENT_TEAM = 2PZT698BSA;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = PracowniaProblematyczna/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -499,7 +498,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = PracowniaProblematyczna/PracowniaProblematyczna.entitlements;
-				DEVELOPMENT_TEAM = 2PZT698BSA;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = PracowniaProblematyczna/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

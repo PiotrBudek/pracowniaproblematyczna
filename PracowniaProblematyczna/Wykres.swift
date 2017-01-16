@@ -2,7 +2,7 @@
 //  Wykres.swift
 //  PracowniaProblematyczna
 //
-//  Created by Michał Banaszyński on 13/01/17.
+//  Created by Piotr Budek on 13/01/17.
 //  Copyright © 2017 Piotr Budek. All rights reserved.
 //
 

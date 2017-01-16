@@ -2,7 +2,7 @@
 //  ViewController.swift
 //  PracowniaProblematyczna
 //
-//  Created by Michal Banaszyński on 10/11/2016.
+//  Created by Piotr Budek on 10/11/2016.
 //  Copyright © 2016 Piotr Budek. All rights reserved.
 //
 
